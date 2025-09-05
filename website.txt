@@ -1,24 +1,77 @@
-DELAY 3000
-GUI r
-DELAY 500
-STRING msedge
-ENTER
-DELAY 1000
-STRING https://sachinpandey7709.github.io/profilecard.com/
-ENTER
-DELAY 1000
-CTRL T
-STRING https://sachinpandey7709.github.io/sachin-portfolio/
-ENTER
-DELAY 1000
-CTRL T
-STRING https://sachinpandey7709.github.io/Resume-Design/
-ENTER
-DELAY 1000
-CTRL T
-STRING https://sites.google.com/view/santoshkumarpandeyenterprise
-ENTER
+/*
+ * Generated with <3 by Dckuino.js, an open source project !
+ */
 
+#include "Keyboard.h"
 
+void typeKey(int key)
+{
+  Keyboard.press(key);
+  delay(50);
+  Keyboard.release(key);
+}
 
+/* Init function */
+void setup()
+{
+  // Begining the Keyboard stream
+  Keyboard.begin();
 
+  // Initial delay (3 seconds)
+  delay(3000);
+
+  // Open Run (Win + R)
+  Keyboard.press(KEY_LEFT_GUI);
+  Keyboard.press('r');
+  Keyboard.releaseAll();
+  delay(500);
+
+  // Type "msedge"
+  Keyboard.print("msedge");
+  typeKey(KEY_RETURN);
+  delay(1000);
+
+  // Open first URL
+  Keyboard.print("https://sachinpandey7709.github.io/profilecard.com/");
+  typeKey(KEY_RETURN);
+  delay(1000);
+
+  // Open new tab (CTRL + T)
+  Keyboard.press(KEY_LEFT_CTRL);
+  Keyboard.press('t');
+  Keyboard.releaseAll();
+  delay(500);
+
+  // Second URL
+  Keyboard.print("https://sachinpandey7709.github.io/sachin-portfolio/");
+  typeKey(KEY_RETURN);
+  delay(1000);
+
+  // New tab again
+  Keyboard.press(KEY_LEFT_CTRL);
+  Keyboard.press('t');
+  Keyboard.releaseAll();
+  delay(500);
+
+  // Third URL
+  Keyboard.print("https://sachinpandey7709.github.io/Resume-Design/");
+  typeKey(KEY_RETURN);
+  delay(1000);
+
+  // New tab again
+  Keyboard.press(KEY_LEFT_CTRL);
+  Keyboard.press('t');
+  Keyboard.releaseAll();
+  delay(500);
+
+  // Fourth URL
+  Keyboard.print("https://sites.google.com/view/santoshkumarpandeyenterprise");
+  typeKey(KEY_RETURN);
+  delay(1000);
+
+  // Ending stream
+  Keyboard.end();
+}
+
+/* Unused endless loop */
+void loop() {}
